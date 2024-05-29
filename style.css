@@ -42,6 +42,20 @@ body{
   background: var(--bg);
 }
 
+.btn{
+  margin-top: 1rem;
+  display: inline-block;
+  padding: .9rem 3rem;
+  font-size: 1.7rem;
+  background: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover{
+  letter-spacing: .2rem;
+}
+
 .header{
   background: var(--bg);
   display: flex;
@@ -114,3 +128,73 @@ body{
 .header .cart-items-container .cart-item .fa-times:hover{
   color: var(--main-color);
 }
+
+.header .cart-items-container .cart-item img{
+  height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3{
+  font-size: 2rem;
+  padding-bottom: .5rem;
+  color: var(--black);
+}
+
+.header .cart-items-container .cart-item .content .price{
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
+.header .cart-items-container .btn{
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*media queries  */
+@media (max-width:991px){
+
+  html{
+    font-size: 55%;
+  }
+
+  .header{
+    padding: 1.5rem 2rem;
+  }
+
+}
+
+
+
+
