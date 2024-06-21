@@ -87,7 +87,6 @@ section{
 
 .header .logo img{
   height: 6rem;
-  size: 150%;
 }
 
 .header .navbar a{
@@ -228,6 +227,35 @@ section{
   padding: 1rem 0;
   line-height: 1.8;
 }
+
+.menu .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  gap:1.5rem;
+}
+
+.menu .box-container .box{
+  padding:5rem;
+  text-align: center;
+  border:var(--border);    
+}
+
+.menu .box-container .box img{
+  height: 10rem;
+}
+
+.menu .box-container .box h3{
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.menu .box-container .box .price{
+  color: #fff;
+  font-size: 2.5rem;
+  padding: .5rem 0;
+}
+
 
 
 
