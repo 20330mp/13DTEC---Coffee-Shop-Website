@@ -45,3 +45,71 @@ function fb_login(_save, _procFunc) {
     console.log('fb_login: status = ' + loginStatus);
   }
 }
+
+/**************************************************************/
+// fb_writeRec(_path, _key, _data, _child)
+// Called in multiple places
+// Write a specific record & key to the DB 
+// Write a specific record to the child of the key inside the key to the DB
+// Input:  path to write to, the key and the data to write, the child value of the key
+// Return: N/A
+/**************************************************************/
+function fb_writeRec(_path, _key, _data, _procFunc, _callBack) {
+  console.log('%cfb_WriteRec() path= ' + _path + '  key= ' + _key +
+    '  data= ' + _data.name + '/' + _data.score + '/' + _data.highScore,
+    'color: brown;');
+
+  writeStatus = 'waiting';
+
+  //Writes to the database
+  firebase.database().ref(_path + '/' + _key).set(_data,
+    fb_writeError);
+
+  function fb_writeError(error) {
+    _procFunc(error, _callBack);
+  }
+  console.log("fb_writeRec:exit");
+}
+
+/**************************************************************/
+// fb_readRec(_path, _key, _data)
+// Read a specific DB record
+// Input:  path & key of record to read and where to save the data
+// Return:  
+/**************************************************************/
+function fb_readRec(_path, _key, _data, _procFunc, _callBack) {
+  console.log('%cfb_readRec() path= ' + _path +
+    '  key= ' + _key, 'color: brown;');
+
+  readStatus = 'waiting';
+
+  firebase.database().ref(_path + '/' + _key).once('value', gotRecord, readErr)
+
+  function gotRecord(snapshot) {
+    _procFunc(snapshot, _data, _callBack)
+  }
+
+  function readErr(error) {
+    readStatus = 'failed';
+    console.log(error)
+  }
+}
+
+/**************************************************************/
+// fb_logout()
+// Logout of Firebase
+// Input:  n/a
+// Return: n/a
+/**************************************************************/
+function fb_logout() {
+  console.log('%cfb_logout() ', 'color: brown;');
+
+  fbV_userLoggedIn = "n"
+  fbV_userAdmin = "n"
+  sessionStorage.setItem("fbV_userLoggedIn", fbV_userLoggedIn)
+  sessionStorage.setItem("fbV_userAdmin", fbV_userAdmin)
+
+
+  firebase.auth().signOut();
+  window.location = "/index.html";
+}

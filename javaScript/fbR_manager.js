@@ -25,3 +25,24 @@ function fbR_initialise() {
     database = firebase.database();
   }
 }
+
+/**************************************************************/
+// fbR_login(loginStatus, user, _save)
+// Called by fb_login
+// Saves the users details data from the google acount 
+// Checks if the user is registered
+// Input: users login status, the data passed from google about the user and a place where to save it
+// Return: N/A
+/**************************************************************/
+function fbR_login(loginStatus, user, _save) {
+  console.log("fbR_login()")
+  console.log(loginStatus);
+
+  //Saves the Google record into the fbV_userDetails object
+  _save.uid = user.uid;
+  _save.name = user.displayName;
+  _save.email = user.email;
+  _save.photoURL = user.photoURL;
+
+  console.log(_save);
+}
