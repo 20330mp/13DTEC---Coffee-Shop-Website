@@ -123,6 +123,9 @@ section{
   width: 35rem;
   background: #fff;
   padding: 0 1.5rem;
+  max-height: 600px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  margin-bottom: 20px;
 }
 
 .header .cart-items-container.active{
@@ -143,6 +146,18 @@ section{
   font-size: 2rem;
   cursor: pointer;
   color: var(--black);
+}
+
+.header .cart-items-container .cart-item button{
+  position: absolute;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 10px;
+  right: 10px;
 }
 
 .header .cart-items-container .cart-item .fa-times:hover{
@@ -168,6 +183,51 @@ section{
   width: 100%;
   text-align: center;
 }
+
+/* cart items styling */
+
+/* .cart-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.cart-item-name {
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.cart-item-price {
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
+.cart-item-img {
+  height: 7rem;
+  width: 7rem;
+}
+
+.cart-item button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.cart-item button:hover {
+  background-color: #ff4500;
+} */
+
+/* cart items styling finish */
 
 .home{
   min-height: 100vh;

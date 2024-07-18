@@ -9,8 +9,19 @@ console.log('%c' + MODULENAME + ': ', 'color: blue;');
 
 //Details path
 const DETAILS_PATH = "userDetails"
+//Orders path
+const ORDER_PATH = "userOrder"
 
 //user details object of arrays
+var fbV_userDetails = {
+  //Google Details
+  uid:      '',
+  email:    '',
+  name:     '',
+  photoURL: '',
+};
+
+//user order object of arrays
 var fbV_userDetails = {
   //Google Details
   uid:      '',

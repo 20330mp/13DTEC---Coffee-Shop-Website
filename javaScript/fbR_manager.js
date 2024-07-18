@@ -45,4 +45,30 @@ function fbR_login(loginStatus, user, _save) {
   _save.photoURL = user.photoURL;
 
   console.log(_save);
+
+  //writes the user details to the details path
+  fb_writeRec(DETAILS_PATH, fbV_userDetails.uid, fbV_userDetails, fbR_procWrite)
+}
+
+/**************************************************************/
+// fbR_procWrite(snapshot, _save)
+// Called by fb_writeRec
+// Checks if the write was succesfull
+// Input: error and callback function if there are any
+// Return: N/A
+/**************************************************************/
+function fbR_procWrite(error, _callBack) {
+  console.log("fbR_procWrite()")
+  if (error) {
+    writeStatus = 'failed';
+    console.log("write: FAILED");
+    alert('firebase write error.\nPlease see console log for details');
+  }
+  else {
+    writeStatus = "OK";
+    console.log("write: OK")
+  }
+  if (_callBack != null) {
+    _callBack();
+  }
 }
