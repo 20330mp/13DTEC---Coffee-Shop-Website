@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -36,7 +36,7 @@
   
   <!-- Logo -->
   <a href="#" class="logo">
-    <img src="images/hvhslogo.png" alt="logo Image">
+    <img src="images/hvhslogo.png" alt="logo mage">
   </a>
 
   <!-- Navbar -->
@@ -55,12 +55,20 @@
 
   <!-- Cart Items -->
   <div class="cart-items-container">
+
+    <div id="order-complete-popup">
+        <p>Your order has been completed!</p>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
     
     <div id="cart-items"> <h1>Your cart is empty</h1></div>
     <h2>Total: $<span id="total">0.00</span></h2>
     
-    <a href="#" class="btn"> checkout now </a>
+    <a href="javascript:cart_checkout()" class="btn"> checkout now </a>
   </div>
+
+  
+  
 </header>
   
 <!-- End of header section-->
