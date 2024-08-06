@@ -424,29 +424,38 @@ section{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 320px;
   padding: 20px;
-  background-color: #fffae6;
-  border: 2px solid #ffc107;
+  background-color: #fef5e7;
+  border: 1px solid #d1a36e;
   border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Georgia', serif;
+  color: #6b4226;
   font-size: 1.6rem;
+}
+.tick-symbol {
+  font-size: 36px;
+  color: #6b4226;
+  margin: 15px 0;
 }
 
 .close-btn {
   margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #ffc107;
+  padding: 10px 30px;
+  background-color: #d1a36e;
   border: none;
   border-radius: 5px;
   color: white;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .close-btn:hover {
-  background-color: #e0a800;
+  background-color: #b08a5b;
+  transform: scale(1.05);
 }
 
 
