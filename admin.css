@@ -1,0 +1,232 @@
+:root{
+        --main-color:#d3ad7f;
+        --black:#13131a;
+        --bg:#010103;
+        --border:.1rem solid rgba(255,255,255,.3);
+    }
+
+    *{
+        font-family: 'Roboto', sans-serif;
+        margin:0; padding:0;
+        box-sizing: border-box;
+        outline: none; border:none;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: .2s linear;
+    }
+
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 9rem;
+        scroll-behavior: smooth;
+    }
+
+    html::-webkit-scrollbar{
+        width: .8rem;
+    }
+
+    html::-webkit-scrollbar-track{
+        background: transparent;
+    }
+
+    html::-webkit-scrollbar-thumb{
+        background: #fff;
+        border-radius: 5rem;
+    }
+
+    body{
+        background: var(--bg);
+    }
+
+    section{
+        padding:2rem 7%;
+    }
+
+    .heading{
+        text-align: center;
+        color: #fff;
+        text-transform: uppercase;
+        padding-bottom: 3.5rem;
+        font-size: 4rem;
+    }
+
+    .heading span{
+        color: var(--main-color);
+        text-transform: uppercase;
+    }
+
+    .btn{
+        margin-top: 1rem;
+        display: inline-block;
+        padding: .9rem 3rem;
+        font-size: 1.7rem;
+        background: var(--main-color);
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .btn:hover{
+        letter-spacing: .2rem;
+    }
+
+    .header{
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 7%;
+        border-bottom: var(--border);
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 1000;
+    }
+
+    .header .logo img{
+        height: 6rem;
+    }
+
+    .header .navbar {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+    }
+
+    .header .navbar a{
+        margin: 0 2rem;
+        font-size: 2.3rem;
+        color: #fff;
+    }
+
+    .header .navbar a:hover{
+        color: var(--main-color);
+        border-bottom: .1rem solid var(--main-color);
+        padding-bottom: .5rem;
+    }
+
+    .header .icons {
+        display: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 10rem 7%;
+        color: #fff;
+    }
+
+    .container h2 {
+        text-align: center;
+        color: var(--main-color);
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: var(--black);
+        border: var(--border);
+    }
+
+    table, th, td {
+        border: var(--border);
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        color: #fff;
+    }
+
+    th {
+        background-color: var(--black);
+        color: var(--main-color);
+    }
+
+    @media screen and (max-width: 768px) {
+        .header .navbar {
+            display: none;
+        }
+
+        .header .icons {
+            display: block;
+        }
+
+        .header .navbar.active {
+            display: block;
+            position: absolute;
+            background: var(--bg);
+            top: 7rem;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 2rem 0;
+            z-index: 999;
+        }
+
+        .header .navbar.active a {
+            display: block;
+            margin: 1.5rem 0;
+            font-size: 2.3rem;
+        }
+
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+
+        th {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        tr {
+            border: 1px solid #ccc;
+        }
+
+        td {
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+            text-align: right;
+        }
+
+        td:before {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td:before {
+            content: attr(data-label);
+        }
+    }
+
+    @media (max-width:991px){
+        html{
+            font-size: 55%;
+        }
+
+        .header{
+            padding: 1.5rem 2rem;
+        }
+
+        section{
+            padding:2rem;
+        }
+    }
+
+    @media (max-width:450px){
+        html{
+            font-size: 50%;
+        }
+    }

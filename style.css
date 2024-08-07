@@ -123,9 +123,9 @@ section{
   width: 35rem;
   background: #fff;
   padding: 0 1.5rem;
-  max-height: 600px; /* Set a fixed height */
-  overflow-y: auto; /* Enable vertical scrolling */
-  margin-bottom: 20px;
+  /* max-height: 600px; /* Set a fixed height */
+  /* overflow-y: auto; /* Enable vertical scrolling */ 
+  /* margin-bottom: 20px; */ 
 }
 
 .header .cart-items-container.active{
@@ -550,7 +550,5 @@ section{
     font-size: 50%;
   }
 }
-
-
 
 

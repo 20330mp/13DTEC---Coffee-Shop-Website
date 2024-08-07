@@ -96,6 +96,20 @@ function fb_readRec(_path, _key, _data, _procFunc, _callBack) {
 }
 
 /**************************************************************/
+// fb_readAll(_path, _data, _procFunc)
+// Read all DB records for the path
+// Input:  path to read from, where to save the data and the procces of data function
+// Return:
+/**************************************************************/
+function fb_readAll(_path, _data, _procFunc) {
+    firebase.database().ref(_path).once('value').then(snapshot => {
+        _procFunc(snapshot);
+    }).catch(error => {
+        console.error('Read failed', error);
+    });
+}
+
+/**************************************************************/
 // fb_logout()
 // Logout of Firebase
 // Input:  n/a
