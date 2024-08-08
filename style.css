@@ -69,6 +69,36 @@ section{
   cursor: pointer;
 }
 
+#buy_btn{
+  margin-top: 1rem;
+  display: block;
+  padding: .9rem 3rem;
+  font-size: 2rem;
+  background: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  width: 25rem;
+  text-align: center;
+}
+
+#login_btn{
+  margin-top: 1rem;
+  display: block;
+  padding: .9rem 3rem;
+  font-size: 2rem;
+  background: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  width: 20rem;
+  text-align: center;
+}
+
+flex-container {
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+}
+
 .btn:hover{
   letter-spacing: .2rem;
 }
@@ -497,13 +527,22 @@ section{
     padding: 1.5rem 2rem;
   }
 
+  .header .navbar a{
+    margin: 0 4rem;
+    font-size: 2rem;
+    color: #fff;
+  }
+
   section{
     padding:2rem;
   }
-
 }
 
 @media (max-width:768px){
+
+  flex-container {
+    align-items: center;
+  }
 
   #menu-btn{
     display: inline-block;
