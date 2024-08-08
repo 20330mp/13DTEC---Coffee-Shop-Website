@@ -29,11 +29,11 @@
   <script defer src="/javaScript/cart_manager.js"></script>
 </head>
 
-<body onload="fbR_initialise(); fb_login(fbV_userDetails, fbR_login);">
+<body onload="fbR_initialise(); html_navLoad(); html_toggleNavigation(); html_getUserDetails();">
   
 <!-- Start of header section-->
-<header class="header">
-  
+<header class="header" id="header">
+
   <!-- Logo -->
   <a href="#" class="logo">
     <img src="images/hvhslogo.png" alt="logo mage">
@@ -45,7 +45,7 @@
     <a href="#about">About</a>
     <a href="#menu">Menu</a>
     <a href="#products">Products</a> 
-    <a href="/admin.html">Admin</a>
+    <a href="/admin.html" id="adminButton">Admin</a>
   </nav>
 
   <!-- Navigating Icons -->
@@ -72,9 +72,6 @@
   
   
 </header>
-
-  testing the brunch
-  testing again
   
 <!-- End of header section-->
 
@@ -87,7 +84,8 @@
     <p> Welcome to the HVHS Coffee Shop!</p>
     <flex-container>
       <a href="#menu" class="btn" id="buy_btn"> Buy coffee now! </a>
-      <a href="#menu" class="btn" id="login_btn"> Log in </a>
+      <a onclick="fb_login(fbV_userDetails, fbR_login);" class="btn" id="login_btn"> Log in </a>
+      <a  class="btn" id="logout_btn" onclick="fb_logout()"> Log out </a>
     </flex-container>
   </div>
 
@@ -269,7 +267,7 @@
 <!-- End of the product section -->
 
 <!-- Start of the footer section -->
-<section class="footer">
+<section class="footer" id="footer">
 
   <div class="credit"> created by <span>Michael Pushkar</span> | all rights reserved </div>
   

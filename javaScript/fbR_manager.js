@@ -34,9 +34,10 @@ function fbR_initialise() {
 // Input: users login status, the data passed from google about the user and a place where to save it
 // Return: N/A
 /**************************************************************/
-function fbR_login(loginStatus, user, _save) {
+function fbR_login(user, _save) {
   console.log("fbR_login()")
-  console.log(loginStatus);
+
+  fbV_userLoggedIn = "y";
 
   //Saves the Google record into the fbV_userDetails object
   _save.uid = user.uid;
@@ -46,8 +47,39 @@ function fbR_login(loginStatus, user, _save) {
 
   console.log(_save);
 
+  //Saves the user Details in Session Storage
+  html_googleDetailsStorage();
+  
   //writes the user details to the details path
   fb_writeRec(DETAILS_PATH, fbV_userDetails.uid, fbV_userDetails, fbR_procWrite)
+
+  //Reads the admin path to see if the user is admin
+  fb_readRec(ADMIN_PATH, fbV_userDetails.uid, "", fbR_procReadAdmin)
+}
+
+/**************************************************************/
+// fbR_procReadAdmin(snapshot, _save)
+// Called by fbR_procUserDetails
+// Identify if user is an admin
+// Input: snapshot of data from the admin path
+// Return: N/A
+/**************************************************************/
+function fbR_procReadAdmin(snapshot, _save) {
+  console.log("fbR_procReadAdmin()")
+  if (snapshot.val() == null) {
+    fbV_userAdmin = "n"
+    //Saves the users admin status
+    html_adminStatusStorage();
+    //sends the user to index.html
+    window.location = "/index.html";
+  }
+  else {
+    fbV_userAdmin = "y"
+    //Saves the users admin status
+    html_adminStatusStorage();
+    //sends the user to index.html
+    window.location = "/index.html";
+  }
 }
 
 /**************************************************************/

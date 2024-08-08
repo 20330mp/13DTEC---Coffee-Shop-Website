@@ -69,9 +69,13 @@ section{
   cursor: pointer;
 }
 
+#adminButton{
+  display: none;
+}
+
 #buy_btn{
   margin-top: 1rem;
-  display: block;
+  display: none;
   padding: .9rem 3rem;
   font-size: 2rem;
   background: var(--main-color);
@@ -83,7 +87,19 @@ section{
 
 #login_btn{
   margin-top: 1rem;
-  display: block;
+  display: none;
+  padding: .9rem 3rem;
+  font-size: 2rem;
+  background: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  width: 20rem;
+  text-align: center;
+}
+
+#logout_btn{
+  margin-top: 1rem;
+  display: none;
   padding: .9rem 3rem;
   font-size: 2rem;
   background: var(--main-color);
@@ -105,7 +121,7 @@ flex-container {
 
 .header{
   background: var(--bg);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 7%;
@@ -286,6 +302,10 @@ flex-container {
   color: #eee;
 }
 
+#about{
+  display: none;
+}
+
 .about .row{
   display: flex;
   align-items: center;
@@ -316,6 +336,10 @@ flex-container {
   color: #eee;
   padding: 1rem 0;
   line-height: 1.8;
+}
+
+#menu{
+  display: none;
 }
 
 .menu .box-container{
@@ -352,6 +376,10 @@ flex-container {
 
 .menu .box-container .box:hover > *{
   color: var(--black);
+}
+
+#products{
+  display: none;
 }
 
 .products .box-container{
@@ -412,6 +440,10 @@ flex-container {
   text-decoration: line-through;
   font-weight: 	lighter;
 } 
+
+#footer{
+  display: none;
+}
 
 .footer{
   background: var(--black);

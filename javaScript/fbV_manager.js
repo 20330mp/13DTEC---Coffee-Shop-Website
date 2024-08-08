@@ -11,6 +11,8 @@ console.log('%c' + MODULENAME + ': ', 'color: blue;');
 const DETAILS_PATH = "userDetails"
 //Orders path
 const ORDER_PATH = "userOrder"
+//Admin Path
+const ADMIN_PATH = "admin"
 
 //user details object of arrays
 var fbV_userDetails = {
@@ -21,11 +23,7 @@ var fbV_userDetails = {
   photoURL: '',
 };
 
-//user order object of arrays
-var fbV_userDetails = {
-  //Google Details
-  uid:      '',
-  email:    '',
-  name:     '',
-  photoURL: '',
-};
+//user Login status
+var fbV_userLoggedIn = "n";
+//user admin status
+var fbV_userAdmin = "n";
