@@ -34,7 +34,7 @@ function fbR_initialise() {
 // Input: users login status, the data passed from google about the user and a place where to save it
 // Return: N/A
 /**************************************************************/
-function fbR_login(loginStatus, user, _save) {
+function fbR_login(user, _save) {
   console.log("fbR_login()")
 
   fbV_userLoggedIn = "y";

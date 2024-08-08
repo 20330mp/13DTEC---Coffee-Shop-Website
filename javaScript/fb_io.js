@@ -16,8 +16,7 @@ function fb_login(_save, _procFunc) {
   function newLogin(user) {
     if (user) {
       // user is signed in, so save Google login details in procFunc
-      loginStatus = 'logged in';
-      _procFunc(loginStatus, user, _save);
+      _procFunc( user, _save);
     }
     else {
       // user NOT logged in, so redirect to Google login

@@ -34,6 +34,25 @@ function html_googleDetailsStorage() {
 }
 
 /**************************************************************/
+// html_getUserDetails()
+// Called by many html files
+// Gets the user details for html pages
+// Input: N/A
+// Return: N/A
+/**************************************************************/
+function html_getUserDetails() {
+  console.log("html_getUserDetails()")
+  //Restoring the fbV_userDetails data from index.html
+  fbV_userDetails.uid = sessionStorage.getItem("uid");
+  fbV_userDetails.name = sessionStorage.getItem("name");
+  fbV_userDetails.email = sessionStorage.getItem("email");
+  fbV_userDetails.photoURL = sessionStorage.getItem("photoURL");
+
+  // Get the users login status
+  fbV_userLoggedIn = sessionStorage.getItem("fbV_userLoggedIn")
+}
+
+/**************************************************************/
 // html_navLoad()
 // Called by multiple files in body onload
 // Decides whether to show the admin button
@@ -68,18 +87,26 @@ function html_toggleNavigation() {
   console.log("html_toggleNavigation()")
   if (fbV_userLoggedIn == "y") {
     if(fbV_userAdmin == "n"){
-      adminButton.style.display = "none"; // Hide the admin button
-      header.style.display = "flex"; // Display the navigation bar
-      login_btn.style.display = "none";
-      logout_btn.style.display = "block"
-      buy_btn.style.display = "block";
+        adminButton.style.display = "none"; // Hide the admin button
+        header.style.display = "flex"; // Display the navigation bar
+        login_btn.style.display = "none";
+        logout_btn.style.display = "block"
+        buy_btn.style.display = "block";
+        about.style.display = "block";
+        menu.style.display = "block";
+        products.style.display = "block";
+        footer.style.display = "block";
     }
     else{
-      adminButton.style.display = "inline";
-      header.style.display = "flex"; // Display the navigation bar
-      login_btn.style.display = "none";
-      logout_btn.style.display = "block"
-      buy_btn.style.display = "block";
+        adminButton.style.display = "inline";
+        header.style.display = "flex"; // Display the navigation bar
+        login_btn.style.display = "none";
+        logout_btn.style.display = "block"
+        buy_btn.style.display = "block";
+        about.style.display = "block";
+        menu.style.display = "block";
+        products.style.display = "block";
+        footer.style.display = "block";
     }
   } else {
     header.style.display = "none"; // Hide the navigation bar
