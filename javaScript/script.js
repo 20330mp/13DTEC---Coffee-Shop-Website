@@ -29,6 +29,8 @@ function html_googleDetailsStorage() {
   sessionStorage.setItem("photoURL", fbV_userDetails.photoURL);
 
   sessionStorage.setItem("fbV_userLoggedIn",fbV_userLoggedIn);
+
+  html_navLoad();
 }
 
 /**************************************************************/
@@ -41,13 +43,13 @@ function html_googleDetailsStorage() {
 function html_navLoad() {
   console.log("html_navLoad")
   //Gets the user login status and their admin status
-  fbV_userLoggedIn = sessionStorage.getItem("fbV_userLoggedIn")
-  fbV_userAdmin = sessionStorage.getItem("fbV_userAdmin")
+  fbV_userLoggedIn = sessionStorage.getItem("fbV_userLoggedIn")  
+  fbV_userAdmin = sessionStorage.getItem("fbV_userAdmin")    
   console.log("fbV_userAdmin = " + fbV_userAdmin);
 
   //Check whether the user is admin to display the admin button
   if(fbV_userAdmin == "y"){
-      adminButton.style.display = "block"; // Hide the admin button
+      adminButton.style.display = "inline"; // Hide the admin button
     }
     else{
       adminButton.style.display = "none"; // show the admin button"
@@ -67,22 +69,22 @@ function html_toggleNavigation() {
   if (fbV_userLoggedIn == "y") {
     if(fbV_userAdmin == "n"){
       adminButton.style.display = "none"; // Hide the admin button
-      navBar.style.display = "block"; // Display the navigation bar
-      b_indexLogin.style.display = "none";
-      b_indexLogout.style.display = "block"
-      b_indexPlay.style.display = "block"
+      header.style.display = "flex"; // Display the navigation bar
+      login_btn.style.display = "none";
+      logout_btn.style.display = "block"
+      buy_btn.style.display = "block";
     }
     else{
-      navBar.style.display = "block"; // Display the navigation bar
-      b_indexLogin.style.display = "none";
-      b_indexLogout.style.display = "block"
-      b_indexPlay.style.display = "block"
+      adminButton.style.display = "inline";
+      header.style.display = "flex"; // Display the navigation bar
+      login_btn.style.display = "none";
+      logout_btn.style.display = "block"
+      buy_btn.style.display = "block";
     }
   } else {
-    navBar.style.display = "none"; // Hide the navigation bar
-    b_indexLogin.style.display = "block";
-    b_indexLogout.style.display = "none"
-    b_indexPlay.style.display = "none"
+    header.style.display = "none"; // Hide the navigation bar
+    login_btn.style.display = "block";
+    logout_btn.style.display = "none"
   }
 }
 

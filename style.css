@@ -69,9 +69,13 @@ section{
   cursor: pointer;
 }
 
+#adminButton{
+  display: none;
+}
+
 #buy_btn{
   margin-top: 1rem;
-  display: block;
+  display: none;
   padding: .9rem 3rem;
   font-size: 2rem;
   background: var(--main-color);
@@ -83,7 +87,7 @@ section{
 
 #login_btn{
   margin-top: 1rem;
-  display: block;
+  display: none;
   padding: .9rem 3rem;
   font-size: 2rem;
   background: var(--main-color);

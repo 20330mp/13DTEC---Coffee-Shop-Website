@@ -32,8 +32,8 @@
 <body onload="fbR_initialise(); html_navLoad(); html_toggleNavigation();">
   
 <!-- Start of header section-->
-<header class="header">
-  
+<header class="header" id="header">
+
   <!-- Logo -->
   <a href="#" class="logo">
     <img src="images/hvhslogo.png" alt="logo mage">
@@ -45,7 +45,7 @@
     <a href="#about">About</a>
     <a href="#menu">Menu</a>
     <a href="#products">Products</a> 
-    <a href="/admin.html">Admin</a>
+    <a href="/admin.html" id="adminButton">Admin</a>
   </nav>
 
   <!-- Navigating Icons -->
@@ -84,8 +84,8 @@
     <p> Welcome to the HVHS Coffee Shop!</p>
     <flex-container>
       <a href="#menu" class="btn" id="buy_btn"> Buy coffee now! </a>
-      <a href="#menu" onclick="fb_login(fbV_userDetails, fbR_login);" class="btn" id="login_btn"> Log in </a>
-      <a href="#menu" class="btn" id="logout_btn"> Log out </a>
+      <a onclick="fb_login(fbV_userDetails, fbR_login);" class="btn" id="login_btn"> Log in </a>
+      <a  class="btn" id="logout_btn" onclick="fb_logout()"> Log out </a>
     </flex-container>
   </div>
 
