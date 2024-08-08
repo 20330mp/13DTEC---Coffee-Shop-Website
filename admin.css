@@ -93,134 +93,139 @@ section{
   display: none;
 }
 
-    .container {
-        padding: 10rem 7%;
-        color: #fff;
+.container {
+    padding: 10rem 7%;
+    color: #fff;
+}
+
+.container h2 {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--black);
+    border: var(--border);
+}
+
+table, th, td {
+    border: var(--border);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    color: #fff;
+    font-size: 1rem;
+}
+
+th {
+    background-color: var(--black);
+    color: var(--main-color);
+}
+
+@media screen and (max-width: 768px) {
+    #menu-btn{
+        display: inline-block;
     }
 
-    .container h2 {
+    .header .navbar{
+        position: absolute;
+        top: 100%; 
+        right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+
+    .header .navbar.active{
+        right: 0;
+    }
+
+    .header .navbar a{
+        color: var(--black);
+        margin: 1.5rem;
+        padding: .5rem;
+        display: block;
+        font-size: 2rem;
+    }
+
+    .home{
+        background-position: left;
+        justify-content: center;
         text-align: center;
-        color: var(--main-color);
-        font-size: 3rem;
-        margin-bottom: 2rem;
+    }
+
+    .home .content h3{
+        font-size: 6rem;
+    }
+
+    .home .content p{
+        font-size: 2.5rem;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 20px;
-        background: var(--black);
-        border: var(--border);
     }
 
-    table, th, td {
-        border: var(--border);
+    thead {
+        display: none; /* Hide table headers */
     }
 
-    th, td {
-        padding: 10px;
+    tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+    }
+
+    td {
+        display: block;
+        text-align: center; /* Center text */
+        font-size: 2.2rem; /* Larger text size */
+        padding: 1rem; /* Increased padding */
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        white-space: nowrap;
+        font-weight: bold;
         text-align: left;
-        color: #fff;
     }
 
-    th {
-        background-color: var(--black);
-        color: var(--main-color);
+    th,
+    td {
+        padding: 1rem; /* Increased padding */
     }
+}
 
-    @media screen and (max-width: 768px) {
-        #menu-btn{
-            display: inline-block;
-          }
-
-          .header .navbar{
-            position: absolute;
-            top: 100%; right: -100%;
-            background: #fff;
-            width: 30rem;
-            height: calc(100vh - 9.5rem);
-          }
-
-          .header .navbar.active{
-            right: 0;
-          }
-
-          .header .navbar a{
-            color: var(--black);
-            margin: 1.5rem;
-            padding: .5rem;
-            display: block;
-            font-size: 2rem;
-          }
-
-          .home{
-            background-position: left;
-            justify-content: center;
-            text-align: center;
-          }
-
-          .home .content h3{
-            font-size: 6rem;
-          }
-
-          .home .content p{
-            font-size: 2.5rem;
-          }
-
-        table, thead, tbody, th, td, tr {
-            display: block;
-        }
-
-        th {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-        }
-
-        tr {
-            border: 1px solid #ccc;
-        }
-
-        td {
-            border: none;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-left: 50%;
-            text-align: right;
-        }
-
-        td:before {
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            width: 45%;
-            padding-right: 10px;
-            white-space: nowrap;
-            text-align: left;
-            font-weight: bold;
-        }
-
-        td:before {
-            content: attr(data-label);
-        }
-    }
-
-    @media (max-width:991px){
-        html{
+    @media (max-width: 991px) {
+        html {
             font-size: 55%;
         }
 
-        .header{
+        .header {
             padding: 1.5rem 2rem;
         }
 
-        section{
-            padding:2rem;
+        section {
+            padding: 2rem;
         }
     }
 
-    @media (max-width:450px){
-        html{
+    @media (max-width: 450px) {
+        html {
             font-size: 50%;
         }
     }
+}
