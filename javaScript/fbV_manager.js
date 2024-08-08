@@ -21,11 +21,5 @@ var fbV_userDetails = {
   photoURL: '',
 };
 
-//user order object of arrays
-var fbV_userDetails = {
-  //Google Details
-  uid:      '',
-  email:    '',
-  name:     '',
-  photoURL: '',
-};
+//user Login status
+var fbV_userLoggedIn = "n";
