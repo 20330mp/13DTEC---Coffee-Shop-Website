@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -36,7 +36,7 @@
   
   <!-- Logo -->
   <a href="#" class="logo">
-    <img src="images/hvhslogo.png" alt="logo Image">
+    <img src="images/hvhslogo.png" alt="logo mage">
   </a>
 
   <!-- Navbar -->
@@ -45,6 +45,7 @@
     <a href="#about">About</a>
     <a href="#menu">Menu</a>
     <a href="#products">Products</a> 
+    <a href="/admin.html">Admin</a>
   </nav>
 
   <!-- Navigating Icons -->
@@ -55,12 +56,21 @@
 
   <!-- Cart Items -->
   <div class="cart-items-container">
+
+    <div id="order-complete-popup">
+        <p>Your order has been completed!</p>
+        <div class="tick-symbol">&#10004;</div>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
     
     <div id="cart-items"> <h1>Your cart is empty</h1></div>
     <h2>Total: $<span id="total">0.00</span></h2>
     
-    <a href="#" class="btn"> checkout now </a>
+    <a href="javascript:cart_checkout()" class="btn"> checkout now </a>
   </div>
+
+  
+  
 </header>
 
   testing the brunch
@@ -75,9 +85,12 @@
   <div class="content">
     <h3> HVHS Coffee Shop </h3>
     <p> Welcome to the HVHS Coffee Shop!</p>
-    <a href="#menu" class="btn"> Buy coffee now! </a>
+    <flex-container>
+      <a href="#menu" class="btn" id="buy_btn"> Buy coffee now! </a>
+      <a href="#menu" class="btn" id="login_btn"> Log in </a>
+    </flex-container>
   </div>
-  
+
 </section>
    
 <!-- End of the home section -->
@@ -254,13 +267,6 @@
 
 <!-- Start of the footer section -->
 <section class="footer">
-  
-
-  <div class="share">
-    <a href="#" class="fab fa-facebook"></a>
-    <a href="#" class="fab fa-instagram"></a>
-    <a href="#" class="fab fa-twitter"></a>
-  </div>
 
   <div class="credit"> created by <span>Michael Pushkar</span> | all rights reserved </div>
   

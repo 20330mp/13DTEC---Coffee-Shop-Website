@@ -69,6 +69,36 @@ section{
   cursor: pointer;
 }
 
+#buy_btn{
+  margin-top: 1rem;
+  display: block;
+  padding: .9rem 3rem;
+  font-size: 2rem;
+  background: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  width: 25rem;
+  text-align: center;
+}
+
+#login_btn{
+  margin-top: 1rem;
+  display: block;
+  padding: .9rem 3rem;
+  font-size: 2rem;
+  background: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  width: 20rem;
+  text-align: center;
+}
+
+flex-container {
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+}
+
 .btn:hover{
   letter-spacing: .2rem;
 }
@@ -90,8 +120,8 @@ section{
 }
 
 .header .navbar a{
-  margin: 0 1rem;
-  font-size: 1.6rem;
+  margin: 0 6rem;
+  font-size: 2.3rem;
   color: #fff;
 }
 
@@ -123,9 +153,9 @@ section{
   width: 35rem;
   background: #fff;
   padding: 0 1.5rem;
-  max-height: 600px; /* Set a fixed height */
-  overflow-y: auto; /* Enable vertical scrolling */
-  margin-bottom: 20px;
+  /* max-height: 600px; /* Set a fixed height */
+  /* overflow-y: auto; /* Enable vertical scrolling */ 
+  /* margin-bottom: 20px; */ 
 }
 
 .header .cart-items-container.active{
@@ -418,7 +448,45 @@ section{
   color: var(--main-color);
 }
 
+#order-complete-popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  padding: 20px;
+  background-color: #fef5e7;
+  border: 1px solid #d1a36e;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #6b4226;
+  font-size: 1.6rem;
+}
+.tick-symbol {
+  font-size: 36px;
+  color: #6b4226;
+  margin: 15px 0;
+}
 
+.close-btn {
+  margin-top: 20px;
+  padding: 10px 30px;
+  background-color: #d1a36e;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.close-btn:hover {
+  background-color: #b08a5b;
+  transform: scale(1.05);
+}
 
 
 
@@ -459,13 +527,22 @@ section{
     padding: 1.5rem 2rem;
   }
 
+  .header .navbar a{
+    margin: 0 4rem;
+    font-size: 2rem;
+    color: #fff;
+  }
+
   section{
     padding:2rem;
   }
-
 }
 
 @media (max-width:768px){
+
+  flex-container {
+    align-items: center;
+  }
 
   #menu-btn{
     display: inline-block;
@@ -512,7 +589,5 @@ section{
     font-size: 50%;
   }
 }
-
-
 
 
