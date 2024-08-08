@@ -8,7 +8,7 @@ function addItemToCart(productName, productPrice, productImg){
     if (existingProduct) {
       existingProduct.quantity += 1;
     } else {
-      cart.push({ name: productName, price: productPrice, quantity: 1, image: productImg, timestamp: Date.now()});
+      cart.push({ name: productName, price: productPrice, quantity: 1, image: productImg, timestamp: Date.now(), userName: fbV_userDetails.name });
     }
     updateCart();
 }

@@ -29,7 +29,7 @@ function displayOrders(snapshot) {
         var order = childSnapshot.val();
         for (var item in order) {
             var row = ordersTable.insertRow();
-            row.insertCell(0).innerHTML = childSnapshot.key;
+            row.insertCell(0).innerHTML = order[item].userName;
             row.insertCell(1).innerHTML = `<img src="${order[item].image}" alt="${order[item].name}" width="50">`;
             row.insertCell(2).innerHTML = order[item].name;
             row.insertCell(3).innerHTML = order[item].quantity ;
