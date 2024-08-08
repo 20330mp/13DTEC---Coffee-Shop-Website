@@ -29,7 +29,7 @@
   <script defer src="/javaScript/cart_manager.js"></script>
 </head>
 
-<body onload="fbR_initialise(); fb_login(fbV_userDetails, fbR_login);">
+<body onload="fbR_initialise(); html_navLoad(); html_toggleNavigation();">
   
 <!-- Start of header section-->
 <header class="header">
@@ -72,9 +72,6 @@
   
   
 </header>
-
-  testing the brunch
-  testing again
   
 <!-- End of header section-->
 
@@ -87,7 +84,7 @@
     <p> Welcome to the HVHS Coffee Shop!</p>
     <flex-container>
       <a href="#menu" class="btn" id="buy_btn"> Buy coffee now! </a>
-      <a href="#menu" class="btn" id="login_btn"> Log in </a>
+      <a href="#menu" onclick="fb_login(fbV_userDetails, fbR_login);" class="btn" id="login_btn"> Log in </a>
       <a href="#menu" class="btn" id="logout_btn"> Log out </a>
     </flex-container>
   </div>

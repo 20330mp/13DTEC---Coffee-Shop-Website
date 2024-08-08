@@ -86,5 +86,18 @@ function html_toggleNavigation() {
   }
 }
 
+/**************************************************************/
+// html_navLoad()
+// Called by many files
+// saves the admin status in session storage
+// Input:  n/a
+// Return: n/a
+/**************************************************************/
+function html_adminStatusStorage(){
+  console.log("html_adminStatusStorage()")
+
+  sessionStorage.setItem("fbV_userAdmin", fbV_userAdmin)
+}
+
 
 
