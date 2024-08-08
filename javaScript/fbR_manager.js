@@ -36,7 +36,8 @@ function fbR_initialise() {
 /**************************************************************/
 function fbR_login(loginStatus, user, _save) {
   console.log("fbR_login()")
-  console.log(loginStatus);
+
+  fbV_userLoggedIn = "y";
 
   //Saves the Google record into the fbV_userDetails object
   _save.uid = user.uid;
@@ -46,6 +47,9 @@ function fbR_login(loginStatus, user, _save) {
 
   console.log(_save);
 
+  //Saves the user Details in Session Storage
+  html_googleDetailsStorage();
+  
   //writes the user details to the details path
   fb_writeRec(DETAILS_PATH, fbV_userDetails.uid, fbV_userDetails, fbR_procWrite)
 }
