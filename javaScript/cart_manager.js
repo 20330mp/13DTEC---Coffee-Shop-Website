@@ -33,11 +33,10 @@ function updateCart() {
                 <div class="content">
                   <h3> ${product.name} (${product.quantity})</h3>
                   <div class="price">$${(product.price * product.quantity).toFixed(2)}</div>
-                  <button onclick="removeFromCart('${product.name}')">Remove</button>
                 </div>
             </div>
             
-            
+            <button onclick="removeFromCart('${product.name}')">Remove</button>
         `;
         cartItemsContainer.appendChild(cartItem);
     });
