@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Pushkar-13DTEC-Coffee Shop Website</title>
+  <title>Michael Pushkar-13DTEC-Coffee Shop Website-Admin page</title>
   <link href="admin.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/x-icon" href="/images/hvhslogo.png">
 
   <!-- font link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -26,12 +27,11 @@
   <script defer src="/javaScript/fb_io.js"></script>
   <script defer src="/javaScript/fbV_manager.js"></script>
   <script defer src="/javaScript/cart_manager.js"></script>
-  <script defer src="/javaScript/admin.js"></script>
+  <script defer src="/javaScript/admin_manager.js"></script>
   
 </head>
 
 <body onload="fbR_initialise(); admin_load();">
-
 
   <!-- Start of header section-->
   <header class="header">
@@ -58,6 +58,7 @@
 
   <!-- End of header section-->
 
+  <!-- Table that displays placed orders -->
   <div class="container">
       <h2>Orders</h2>
       <table id="ordersTable">

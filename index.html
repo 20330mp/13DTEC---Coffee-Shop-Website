@@ -3,12 +3,13 @@
 
 <head>
   <meta name="robots" content="index, follow">
-  <meta name="description" content="A website for an online coffee shop at Hutt Valley High School>
+  <meta name="description" content="A website for an online coffee shop at Hutt Valley High School">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Pushkar-13DTEC-Coffee Shop Website</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>Michael Pushkar-13DTEC-Coffee Shop Website-home page</title>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/x-icon" href="/images/hvhslogo.png">
 
   <!-- font link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -24,7 +25,7 @@
   <!-- firebase end ******************************************-->
 
   <!-- Java script link -->
-  <script defer src="/javaScript/script.js"></script>
+  <script defer src="/javaScript/html_manager.js"></script>
   <script defer src="/javaScript/fbR_manager.js"></script>
   <script defer src="/javaScript/fb_io.js"></script>
   <script defer src="/javaScript/fbV_manager.js"></script>
@@ -38,7 +39,7 @@
 
   <!-- Logo -->
   <a href="#" class="logo">
-    <img src="images/hvhslogo.png" alt="logo mage">
+    <img src="images/hvhslogo.png" alt="Favicon">
   </a>
 
   <!-- Navbar -->
@@ -59,15 +60,18 @@
   <!-- Cart Items -->
   <div class="cart-items-container">
 
+    <!-- Order complete popup -->
     <div id="order-complete-popup">
         <p>Your order has been completed!</p>
         <div class="tick-symbol">&#10004;</div>
-        <button class="close-btn" onclick="closePopup()">Close</button>
+        <button class="close-btn" onclick="cart_hidePopup()">Close</button>
     </div>
-    
+
+    <!-- Cart total -->
     <div id="cart-items"> <h1>Your cart is empty</h1></div>
     <h2>Total: $<span id="total">0.00</span></h2>
-    
+
+    <!-- checkout now button -->
     <a href="javascript:cart_checkout()" class="btn"> checkout now </a>
   </div>
 
@@ -84,6 +88,7 @@
   <div class="content">
     <h3> HVHS Coffee Shop </h3>
     <p> Welcome to the HVHS Coffee Shop!</p>
+    <!-- Buttons container -->
     <flex-container>
       <a href="#menu" class="btn" id="buy_btn"> Buy coffee now! </a>
       <a onclick="fb_login(fbV_userDetails, fbR_login);" class="btn" id="login_btn"> Log in </a>
@@ -98,19 +103,21 @@
 <!-- Start of about section-->
 <section class="about" id="about">
   
-  <h1 class="heading"> <span> About </span> us </h1>
+  <h2 class="heading"> <span> About </span> us </h2>
   
   <div class="row">
 
+    <!-- About section image -->
     <div class="image">
-      <img src="images/about-img.jpeg" alt="">
+      <img src="images/about-img.jpeg" alt="About Section">
     </div>
 
+    <!-- About section content -->
     <div class="content">
       <h3>what makes out coffee special?</h3>
-      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in consequat risus, et cursus erat. Praesent ullamcorper, augue et ullamcorper iaculis, magna mi aliquam. lorem, sit amet lobortis nulla justo in nisi. Nulla finibus imperdiet elit, ut posuere neque facilisis vitae. </p>  
-      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in consequat risus, et cursus erat.</p>
-      <a href="#" class="btn"> Shop our products </a>
+      <p> At HVHS Coffee Shop, we're passionate about serving the perfect cup of coffee to fuel your day. Whether you're grabbing a quick espresso on the way to class or settling in with a latte to study, our locally sourced brews are crafted with care. We’re here to bring the warmth and energy of great coffee to your school community. </p>  
+      <p> Stop by and enjoy a cup with us!</p>
+      <a href="#products" class="btn"> Shop our products </a>
     </div>
     
   </div>
@@ -123,50 +130,70 @@
 
 <section class="menu" id="menu">
   
-  <h1 class="heading"> our <span>menu</span></h1>
+  <h2 class="heading"> our <span>menu</span></h2>
 
   <div class="box-container">
 
+    <!-- Coffee Product #1 -->
     <div class="box">
-      <img src="images/menu-1.png" alt="Cappusccino product image">
+      <img src="images/menu-1.png" alt="Cappuccino Coffee">
       <h3> Cappuccino </h3>
       <div class="price"> $5.50 </div>
-      <button onclick="addItemToCart('Cappuccino', 5.50, 'images/menu-1.png' );" class="btn"> add to cart </button>
+      <button class="btn" data-product-name="Cappuccino" data-product-price="5.50" data-product-img="images/menu-1.png"> 
+          <span>-</span> Add to cart <span>+</span> 
+      </button>
+
     </div>
 
+
+    <!-- Coffee Product #2 -->
     <div class="box">
-      <img src="images/menu-2.png" alt="Latte product image">
+      <img src="images/menu-2.png" alt="Latte Coffee">
       <h3> Latte </h3>
       <div class="price"> $6.00 </div>
-      <button onclick="addItemToCart('Latte', 6.00, 'images/menu-2.png' );" class="btn"> add to cart </button>
+      <button class="btn" data-product-name="Latte" data-product-price="6.00" data-product-img="images/menu-2.png"> 
+          <span>-</span> Add to cart <span>+</span> 
+      </button>
     </div>
 
+    <!-- Coffee Product #3 -->
     <div class="box">
-      <img src="images/menu-3.png" alt="Long Machiato product image">
+      <img src="images/menu-3.png" alt="Long Machiato coffee">
       <h3> Machiato </h3>
       <div class="price"> $5.00 </div>
-      <button onclick="addItemToCart('Machiato', 5.00, 'images/menu-3.png' );" class="btn"> add to cart </button>
+      <button class="btn" data-product-name="Machiato" data-product-price="5.00" data-product-img="images/menu-3.png"> 
+          <span>-</span> Add to cart <span>+</span> 
+      </button>
     </div>
 
+    <!-- Coffee Product #4 -->
     <div class="box">
-      <img src="images/menu-4.png" alt="Fluffy product image">
+      <img src="images/menu-4.png" alt="Fluffy coffee">
       <h3> Fluffy </h3>
       <div class="price"> $4.00 </div>
-      <button onclick="addItemToCart('Fluffy', 4.00, 'images/menu-4.png' );" class="btn"> add to cart </button>
+      <button class="btn" data-product-name="Fluffy" data-product-price="4.00" data-product-img="images/menu-4.png"> 
+          <span>-</span> Add to cart <span>+</span> 
+      </button>
     </div>
 
+    <!-- Coffee Product #5 -->
     <div class="box">
-      <img src="images/menu-5.png" alt="Flat White product image">
+      <img src="images/menu-5.png" alt="Flat White coffee">
       <h3> Flat White </h3>
       <div class="price"> $5.50 </div>
-      <button onclick="addItemToCart('Flat White', 5.50, 'images/menu-5.png' );" class="btn"> add to cart </button>
+      <button class="btn" data-product-name="Flat White" data-product-price="6.00" data-product-img="images/menu-5.png"> 
+          <span>-</span> Add to cart <span>+</span> 
+      </button>
     </div>
-
+    
+    <!-- Coffee Product #6 -->
     <div class="box">
-      <img src="images/menu-6.png" alt="Mochaccino product image">
+      <img src="images/menu-6.png" alt="Mochaccino coffee">
       <h3> Mochaccino </h3>
       <div class="price"> $5.50 </div>
-      <button onclick="addItemToCart('Mochaccino', 5.50, 'images/menu-6.png' );" class="btn"> add to cart </button>
+      <button class="btn" data-product-name="Mochaccino" data-product-price="5.50" data-product-img="images/menu-6.png"> 
+          <span>-</span> Add to cart <span>+</span> 
+      </button>
     </div>
     
   </div>
@@ -179,18 +206,15 @@
 
 <section class="products" id="products">
 
-  <h1 class="heading"> our <span>products</span></h1>
+  <h2 class="heading"> our <span>products</span></h2>
 
   <div class="box-container">
 
     <!-- Product #1-->
     <div class="box">
-      <div class="icons"
-        <a href="#" class="fas fa-shopping-cart"></a>
-      </div>
       
       <div class="image">
-        <img src="images/product-1.png" alt="product image">
+        <img src="images/product-1.png" alt="Liberica Beans">
       </div>
       
       <div class="content">
@@ -205,19 +229,18 @@
         
         <div class="price">$15.99 <span>$20.99</span></div> 
 
-        <button onclick="addItemToCart('Liberica Beans', 15.99, 'images/product-1.png' );" class="btn"> add to cart </button>
+        <button class="btn" data-product-name="Liberica Beans" data-product-price="15.99" data-product-img="images/product-1.png"> 
+            <span>-</span> Add to cart <span>+</span> 
+        </button>
       </div>  
     </div>
 
     <!-- Product #2 -->
 
     <div class="box">
-      <div class="icons"
-        <a href="#" class="fas fa-shopping-cart"></a>
-      </div>
 
       <div class="image">
-        <img src="images/product-2.png" alt="product image">
+        <img src="images/product-2.png" alt="Robusta Beans">
       </div>
 
       <div class="content">
@@ -232,19 +255,18 @@
 
         <div class="price">$15.99 <span>$20.99</span></div> 
 
-        <button onclick="addItemToCart('Robusta Beans', 15.99, 'images/product-2.png' );" class="btn"> add to cart </button>
+        <button class="btn" data-product-name="Robusta Beans" data-product-price="15.99" data-product-img="images/product-2.png"> 
+            <span>-</span> Add to cart <span>+</span> 
+        </button>
       </div>  
     </div>
 
     <!-- Product #3 -->
 
     <div class="box">
-      <div class="icons"
-        <a href="#" class="fas fa-shopping-cart"></a>
-      </div>
 
       <div class="image">
-        <img src="images/product-3.png" alt="product image">
+        <img src="images/product-3.png" alt="Arabica Beans">
       </div>
 
       <div class="content">
@@ -259,7 +281,9 @@
 
         <div class="price">$15.99 <span>$20.99</span></div> 
 
-        <button onclick="addItemToCart('Arabica Beans', 15.99, 'images/product-3.png' );" class="btn"> add to cart </button>
+        <button class="btn" data-product-name="Arabica Beans" data-product-price="15.99" data-product-img="images/product-3.png"> 
+            <span>-</span> Add to cart <span>+</span> 
+        </button>
       </div>  
     </div> 
   </div>
@@ -269,13 +293,11 @@
 <!-- End of the product section -->
 
 <!-- Start of the footer section -->
-<section class="footer" id="footer">
+<div class="footer" id="footer">
 
   <div class="credit"> created by <span>Michael Pushkar</span> | all rights reserved </div>
   
-</section>
-  
-
+</div>
   
 <!-- End of the footer section -->
   

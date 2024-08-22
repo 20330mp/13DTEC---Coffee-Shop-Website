@@ -1,4 +1,11 @@
 /**************************************************************/
+// fbR_manager.js
+//
+//Procecess the data received from the database
+// written by Micahel Pushkar  2024
+/**************************************************************/
+
+/**************************************************************/
 // fbR_initialise()
 // Called by setup
 // Initialize firebase

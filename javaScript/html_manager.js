@@ -1,3 +1,11 @@
+/**************************************************************/
+//  html_manager.js
+//
+//  Manages the session storage and loads details
+//  for html pages
+//  written by Micahel Pushkar  2024
+/**************************************************************/
+
 let navbar = document.querySelector('.navbar');
 
 document.querySelector('#menu-btn').onclick = () =>{
@@ -27,9 +35,9 @@ function html_googleDetailsStorage() {
   sessionStorage.setItem("name", fbV_userDetails.name);
   sessionStorage.setItem("email", fbV_userDetails.email);
   sessionStorage.setItem("photoURL", fbV_userDetails.photoURL);
-
+  
   sessionStorage.setItem("fbV_userLoggedIn",fbV_userLoggedIn);
-
+  
   html_navLoad();
 }
 
@@ -108,7 +116,8 @@ function html_toggleNavigation() {
         products.style.display = "block";
         footer.style.display = "block";
     }
-  } else {
+  } 
+  else {
     header.style.display = "none"; // Hide the navigation bar
     login_btn.style.display = "block";
     logout_btn.style.display = "none"
@@ -127,6 +136,3 @@ function html_adminStatusStorage(){
 
   sessionStorage.setItem("fbV_userAdmin", fbV_userAdmin)
 }
-
-
-

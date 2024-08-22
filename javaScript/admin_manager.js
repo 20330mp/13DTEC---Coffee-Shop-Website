@@ -1,8 +1,8 @@
+// Media queries
 let navbar = document.querySelector('.navbar');
 
 document.querySelector('#menu-btn').onclick = () =>{
     navbar.classList.toggle('active');
-
 }
 
 /*------------------------------------------------------------*/
@@ -13,17 +13,21 @@ document.querySelector('#menu-btn').onclick = () =>{
 // Return: n/a
 /*------------------------------------------------------------*/
 function admin_load() {
-      console.log("admin_load()");
-
-      //Get the items from session storage
-      //html_Load();
+    console.log("admin_load()");
     
     // Read all orders from the database
-    fb_readAll('userOrder', {}, displayOrders);
+    fb_readAll('userOrder', {}, admin_displayOrders);
 }
 
+/*------------------------------------------------------------*/
+// admin_displayOrders()
+// Called by admin_load 
 // Function to display orders in table
-function displayOrders(snapshot) {
+// Input:  snapshot
+// Return: n/a
+/*------------------------------------------------------------*/
+function admin_displayOrders(snapshot) {
+    console.log("admin_displayOrders()");
     var ordersTable = document.getElementById('ordersTable').getElementsByTagName('tbody')[0];
     snapshot.forEach(childSnapshot => {
         var order = childSnapshot.val();

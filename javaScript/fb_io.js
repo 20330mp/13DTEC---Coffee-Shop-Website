@@ -1,4 +1,11 @@
 /**************************************************************/
+// fb_io.js
+//
+// Manages the general functions related with the firebase
+// written by Micahel Pushkar  2024
+/**************************************************************/
+
+/**************************************************************/
 // fb_login(_save, _procFunc)
 // Called by index.html
 // Login to Firebase
